@@ -1,0 +1,7 @@
+faiss-cpu
+requests
+streamlit
+toml
+urllib3
+sentence-transformers
+pydrive2

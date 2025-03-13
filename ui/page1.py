@@ -8,6 +8,7 @@ from pydrive2.auth import GoogleAuth
 from pydrive2.drive import GoogleDrive
 from oauth2client.service_account import ServiceAccountCredentials
 
+
 # ✅ Google Drive 인증 함수
 def authenticate_gdrive():
     """Google Drive 인증 함수."""
@@ -45,12 +46,12 @@ def get_naver_api_keys():
     config = toml.load('./.streamlit/secrets.toml')
     return config['NAVER_CLIENT_ID'], config['NAVER_CLIENT_SECRET']
 
-# 📌 네이버 API를 사용하여 책 정보 가져오기
-def get_book_info_from_naver(book_title):
-    """네이버 API를 통해 책 정보를 가져오는 함수."""
+# 📌 네이버 API를 사용하여 책 정보 가져오기 (ISBN으로 검색)
+def get_book_info_from_naver(isbn):
+    """네이버 API를 통해 ISBN을 기반으로 책 정보를 가져오는 함수."""
     client_id, client_secret = get_naver_api_keys()
     url = "https://openapi.naver.com/v1/search/book.json"
-    params = {'query': book_title, 'display': 1}
+    params = {'query': isbn, 'display': 1}  # ISBN을 query로 사용
     headers = {'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret}
 
     response = requests.get(url, headers=headers, params=params)
@@ -67,6 +68,7 @@ def get_book_info_from_naver(book_title):
                 'description': book['description']
             }
     return None
+
 
 # ✅ 피드백 저장 및 Google Drive 업로드 함수
 def save_feedback():

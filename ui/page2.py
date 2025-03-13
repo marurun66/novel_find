@@ -72,7 +72,7 @@ def run_2():
     소설책의 줄거리 데이터를 수집하기 위해 다음과 같은 방법을 사용했습니다:  
     책의 줄거리만을 제공하는 책 API, 데이터 파일은 없었음  
     블로그 리뷰 크롤링: 개개인이 자유롭게 작성하는 블로그 양식 상 줄거리만을 크롭해 오기 어려움 + 개인 창작물로서의 저작권 문제
-    챗지피티 이용: 대량의 책 데이터 줄거리를 API로 받아올 시 비용 문제 발생 (API 호출당 비용 발생)
+    챗지피티 이용: 대량의 책 데이터 줄거리를 API로 받아올 시 비용 문제 발생
 
     **[채택]👌 네이버 책 API**: 
     - **출판사에서 제공하는 소설 소개글** 사용으로 저작권 문제 해결
@@ -183,7 +183,7 @@ def run_2():
         """
     ## 📞 **문의**
     - Email: marurun66@gmail.com
-    - GitHub: [https://github.com/marurun66](https://github.com/marurun66/book-publication)
+    - GitHub: [깃허브 방문](https://github.com/marurun66/novel_find/blob/main/README.md)
     """
     )
     st.markdown(

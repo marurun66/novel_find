@@ -1,5 +1,5 @@
  **이 소설 뭐였지?📚**
-[StreamlitAPP](https://find-book-marurun66.streamlit.app/)
+[StreamlitAPP](https://find-novel-marurun66.streamlit.app/)
 
 ---
 

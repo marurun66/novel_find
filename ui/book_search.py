@@ -26,6 +26,7 @@ def find_similar_books(user_story, top_k=5):
     books_data = load_books()
     book_titles = [book["title"] for book in books_data]
     book_summaries = [book["summary"] for book in books_data]
+    book_isbns = [book.get("isbn", "정보 없음") for book in books_data]
 
     # 모델 로드 (캐시된 모델 사용)
     embedding_model = load_model()
@@ -36,7 +37,8 @@ def find_similar_books(user_story, top_k=5):
 
     recommended_books = [{
         "title": book_titles[indices[0][i]],
-        "summary": book_summaries[indices[0][i]]
+        "summary": book_summaries[indices[0][i]],
+        "isbn": book_isbns[indices[0][i]]
     } for i in range(top_k)]
 
     return recommended_books
@@ -96,7 +98,6 @@ def run_search_books():
     user_story = st.text_area("🔹 스토리를 입력하세요.", placeholder="한 고아소년이 마법사가 되는 소설")
     st.session_state['user_story'] = user_story
 
-    # 버튼 클릭을 한 번만 가능하게 처리
     if "searching" not in st.session_state:
         st.session_state["searching"] = False
 

@@ -144,7 +144,7 @@ def run_1():
     book = st.session_state["books_not_found"][book_index]
 
     # 네이버 API를 사용하여 책 정보 가져오기
-    book_info = get_book_info_from_naver(book['title'])
+    book_info = get_book_info_from_naver(book['isbn'])
 
     if book_info:
         # 책 정보 중복 추가 방지

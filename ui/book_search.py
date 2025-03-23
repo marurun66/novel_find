@@ -2,7 +2,11 @@ import streamlit as st
 import faiss
 import json
 from sentence_transformers import SentenceTransformer
-import time
+
+
+import os
+os.environ["STREAMLIT_WATCH_USE_POLLING"] = "true"
+
 
 # 모델 로드 함수 (캐시 적용)
 @st.cache_resource(ttl=3600)
